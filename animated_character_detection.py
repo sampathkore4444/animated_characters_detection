@@ -141,7 +141,7 @@ def classify_image(image, categories, confidence_threshold):
         return None, None
 
 # Streamlit App UI
-st.title("Cartoon Detection App 💩👺")
+st.title("Cartoon Detection AI App 💩👺")
 st.write("Upload an image, and the app will detect animated characters using AI!!")
 
 # Confidence threshold slider
