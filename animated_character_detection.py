@@ -2,6 +2,7 @@ import streamlit as st
 import torch
 from PIL import Image, UnidentifiedImageError
 from transformers import CLIPProcessor, CLIPModel
+import io
 
 # Cache the model and processor to ensure they are loaded only once
 @st.cache_resource
