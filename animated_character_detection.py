@@ -130,7 +130,12 @@ animated_characters = [
 def classify_image(image, categories, confidence_threshold):
     try:
         inputs = processor(text=categories, images=image, return_tensors="pt", padding=True).to("cpu")
-        outputs = model(**inputs)
+        
+        # outputs = model(**inputs)
+        # Perform classification for general content
+        with torch.no_grad():
+            outputs = model(**inputs)
+
         logits_per_image = outputs.logits_per_image
         probs = logits_per_image.softmax(dim=1)
         
