@@ -123,7 +123,7 @@ animated_characters = [
 
 # Function to classify an image
 def classify_image(image, categories, confidence_threshold):
-    inputs = processor(text=categories, images=image, return_tensors="pt", padding=True).to(device)
+    inputs = processor(text=categories, images=image, return_tensors="pt", padding=True).to("cpu")
     outputs = model(**inputs)
     logits_per_image = outputs.logits_per_image
     probs = logits_per_image.softmax(dim=1)
