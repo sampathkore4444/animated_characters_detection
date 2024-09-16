@@ -3,9 +3,6 @@ import torch
 from PIL import Image
 from transformers import CLIPProcessor, CLIPModel
 
-# Load the CLIP model and processor
-device = "cuda" if torch.cuda.is_available() else "cpu"
-
 # Cache the model and processor to ensure they are loaded only once
 @st.cache_resource
 def load_model():
